@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">LSPAdSkip Pro 广告规则加速器</string>
-
-    <!-- 默认作用域：Bilibili 官方包名（也可在 LSPosed 管理器里手动勾选） -->
-    <string-array name="xposed_scope">
-        <item>tv.danmaku.bili</item>
-    </string-array>
-</resources>
