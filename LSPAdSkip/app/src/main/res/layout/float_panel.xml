@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/panel_bg"
+    android:padding="16dp"
+    android:minWidth="300dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="⚡ LSPAdSkip 悬浮控制"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#303F9F"
+        android:paddingBottom="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="加速倍数"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_factor_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="x1"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#E53935" />
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/seek_factor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="20"
+        android:paddingEnd="8dp" />
+
+    <Switch
+        android:id="@+id/switch_skip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="跳过广告（总开关）"
+        android:textSize="14sp" />
+
+    <Switch
+        android:id="@+id/switch_block"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="拦截广告展示"
+        android:textSize="14sp" />
+
+    <Switch
+        android:id="@+id/switch_accel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="加速倒计时 / 进度"
+        android:textSize="14sp" />
+
+    <Switch
+        android:id="@+id/switch_autoclose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自动关闭广告页"
+        android:textSize="14sp" />
+
+    <Switch
+        android:id="@+id/switch_sdk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自动识别广告 SDK"
+        android:textSize="14sp" />
+
+    <Switch
+        android:id="@+id/switch_stealth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="隐身模式（防 Hook 检测测试）"
+        android:textSize="14sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开启后：静默日志 + 栈帧清洗 + 包管理器/文件系统/maps 隐藏 + 日志净化，用于验证自有应用能否检测到被 hook。重启目标应用生效。"
+        android:textSize="11sp"
+        android:textColor="#757575"
+        android:paddingTop="2dp" />
+
+    <Button
+        android:id="@+id/btn_collapse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="收起" />
+
+</LinearLayout>
