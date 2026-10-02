@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 简单的启动图标占位，可按需替换 -->
+    <string name="ic_launcher_desc">LSPAdSkip</string>
+</resources>
