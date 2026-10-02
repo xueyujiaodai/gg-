@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 悬浮窗权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- 前台服务（悬浮窗保活） -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <!-- Android 13+ 通知权限（用于前台服务通知，可选） -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:label="@string/app_name"
+        android:icon="@drawable/ic_launcher"
+        android:theme="@android:style/Theme.Material.Light">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 检测实验室：隐身覆盖项与框架级指纹清单 -->
+        <activity
+            android:name=".DetectionLabActivity"
+            android:exported="false" />
+
+        <!-- 跨进程读取模块规则配置，供 hook 引擎在目标应用进程中使用 -->
+        <provider
+            android:name=".core.RulesProvider"
+            android:authorities="com.example.lspadskip.rules"
+            android:exported="true" />
+
+        <!-- 悬浮控制窗前台服务 -->
+        <service
+            android:name=".FloatWindowService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="LSPAdSkip overlay control window" />
+        </service>
+
+        <!-- LSPosed 模块声明 -->
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <meta-data
+            android:name="xposeddescription"
+            android:value="Hook 广告规则：跳过/加速广告视频、拦截广告展示、悬浮窗调节" />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="93" />
+        <meta-data
+            android:name="xposedscope"
+            android:resource="@array/xposed_scope" />
+    </application>
+
+</manifest>
